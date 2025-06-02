@@ -1,24 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import  { useEffect } from 'react';
+import { useSelector , useDispatch } from 'react-redux';
+import { AppDispatch , RootState } from './states/store';
+import {addLetter , deleteLetter , resetGame , submitGuess} from './states/slice/GameSlice'
 function App() {
+
+  const gameState = useSelector((state:RootState) => state.game);
+  const dispatch = useDispatch<AppDispatch>();
+  useEffect(() => {
+    const handleKeydown = (ev:KeyboardEvent) =>{
+      console.log(ev.key)
+      if (ev.key === '='){
+        dispatch(resetGame())
+      }
+      else if (/^[A-Za-z]$/.test(ev.key)){
+        dispatch(addLetter(ev.key))
+      }
+      else if (ev.key === 'Enter') {
+        dispatch(submitGuess())
+      }
+
+      else if (ev.key === 'Backspace'){
+        dispatch(deleteLetter())
+      }
+
+      
+    };
+    window.addEventListener('keydown',handleKeydown);
+
+    return ()=>{
+      window.removeEventListener('keydown',handleKeydown);
+    };
+  },[]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     This is my app.
     </div>
   );
 }
