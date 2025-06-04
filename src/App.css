@@ -1,0 +1,40 @@
+/* App.css */
+.container{
+    display: flex;
+    justify-content: center;
+}
+.gameboard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border: 2px solid #888;
+    gap: 5px ;
+    padding: 10px;
+}
+.line {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+.tile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #bbb;
+    font-size: 190%;
+}
+.tile.unmatched{
+    background-color:orangered;
+}
+.tile.matched{
+    background-color: aqua;
+}
+
+.tile.matched.exact{
+    background-color: chartreuse;
+}
+
