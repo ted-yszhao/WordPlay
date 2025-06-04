@@ -87,7 +87,10 @@ function App() {
 
 
 		{gameState.win && <h2>You won!</h2>}
-		<h2>{gameState.over && `Game Over. The answer is ${gameState.answer}.`} Press '=' to reset.</h2>
+		<h2>
+			{gameState.over && `Game Over. The answer is ${gameState.answer}.`}
+			Press '=' to reset
+		</h2>
 
 	</div>;
 }

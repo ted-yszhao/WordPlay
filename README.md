@@ -1,17 +1,25 @@
 # WordPlay
 
-WordPlay is a Wordle-style word guessing game built with React and Redux. Players have to guess a 5-letter word within a limited number of attempts, with visual feedback provided for each guess.
+WordPlay is a Wordle-style word guessing game, currently with a barebone UI. Players have to guess a 5-letter word within a limited number of attempts, with visual feedback provided for each guess.
+
+## How to Play
+
+- Type letters to make guesses
+- Press **Enter** to submit your guess
+- Press **Backspace** to delete letters
+- Press **=** to reset the game
+- Colors indicate:
+  - **Orange**: <div style="background-color:orangered"> Letter not in the word.</div>
+  - **Blue**: <div style="background-color:aqua"> Letter in word but wrong position </dic>
+  - **Green**: <div style="background-color:chartreuse"> Letter in correct position</div>
 
 ![img](./public/image.png)
 
 ## Features
 
-- **Word Guessing Game:** Classic Wordle-style gameplay with 5-letter words
-- **Visual Feedback:** Color-coded tiles showing correct letters and positions
 - **Dynamic Word Generation:** Fetches random words from the Datamuse API
-- **Keyboard Support:** Full keyboard input support
 - **Game State Management:** Built with Redux Toolkit for reliable state management
-- **Responsive Design:** Clean, modern interface
+
 
 ## Getting Started
 
@@ -37,16 +45,7 @@ WordPlay is a Wordle-style word guessing game built with React and Redux. Player
     npm start
     ```
 
-## How to Play
 
-- Type letters to make guesses
-- Press **Enter** to submit your guess
-- Press **Backspace** to delete letters
-- Press **=** to reset the game
-- Colors indicate:
-  - **Gray**: Letter not in the word
-  - **Yellow**: Letter in word but wrong position
-  - **Green**: Letter in correct position
 
 ## Docker Support
 
@@ -60,14 +59,6 @@ docker build -t wordplay-app .
 docker run -p 3000:80 wordplay-app
 ```
 
-## Technologies
-
-- **Frontend:** React 18, TypeScript
-- **State Management:** Redux Toolkit
-- **Styling:** CSS3
-- **API:** Datamuse API for word generation
-- **Build Tool:** Create React App
-- **Deployment:** Docker with Nginx
 
 ## Project Structure
 
@@ -81,6 +72,11 @@ src/
 ├── App.css                 # Application styles
 └── index.tsx              # Application entry point
 ```
+
+## TODO
+
+1. Adding difficulty levels by word frequency.
+2. Much much better UI
 
 ## Contributing
 
