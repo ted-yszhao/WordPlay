@@ -2,6 +2,8 @@
 
 WordPlay is a Wordle-style word guessing game built with React and Redux. Players have to guess a 5-letter word within a limited number of attempts, with visual feedback provided for each guess.
 
+![img](./public/image.png)
+
 ## Features
 
 - **Word Guessing Game:** Classic Wordle-style gameplay with 5-letter words
